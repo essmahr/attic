@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+-->
+<!--[if IE 7]    <html class="no-js lt-ie9 lt-ie8">
+-->
+<!--[if IE 8]    <html class="no-js lt-ie9">
+-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <title>No Scrubs</title>
+  <meta content="No Scrubs" property="og:title" />
+  <meta content="I removed a petty, somewhat spiteful notice that the building management posted to the wall of our laundry room, and replaced it with an exact duplicate that instead recites some lyrics to the song 'No Scrubs' by TLC, and no one seems to have noticed yet."
+    name="description" property="og:description" />
+  <meta content="Scott Mahr" name="author" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?1535308489">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?1535308489">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png?1535308489">
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/5.0.0/sanitize.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Yrsa:400,500,600" rel="stylesheet">
+  <link href="/no-scrubs/style.css?1535308489" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="page">
+    <p class="heading">
+      In May 2017 removed a petty, somewhat spiteful notice that the building
+      management posted to the wall of our laundry room, and replaced it with
+      <a href="#image" data-modal-trigger>a duplicate with some lyrics to the
+        song &ldquo;No Scrubs&rdquo; by TLC</a> and it stayed taped to the wall
+      for roughly a month before someone took it down.
+    </p>
+  </div>
+
+  <div class="image-modal" id="image">
+    <div class="modal-inner">
+      <figure class="figure">
+        <img src="/no-scrubs/before.jpg?1535308489" alt="Before">
+        <figcaption class="caption">before</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="/no-scrubs/after.jpg?1535308489" alt="After">
+        <figcaption class="caption">after</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <script>
+    var modalTrigger = document.querySelector('[data-modal-trigger]');
+    var modal = document.getElementById('image');
+
+    modalTrigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      modal.classList.add('modal-visible');
+    });
+
+    modal.addEventListener('click', function (e) {
+      e.preventDefault();
+      modal.classList.remove('modal-visible');
+    });
+  </script>
+
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-27214081-1', 'auto');
+    ga('require', 'linkid', 'linkid.js');
+    ga('send', 'pageview');
+  </script>
+</body>
+
+</html>
