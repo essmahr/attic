@@ -1,0 +1,60 @@
+body {
+  font-family: "Inconsolata", monospace;
+  color: #333;
+}
+a.back {
+  position: fixed;
+  z-index: 1;
+  bottom: 18px;
+  left: 18px;
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+}
+a.back:hover {
+  color: red;
+}
+h1 {
+  font-size: 1em;
+  padding: 1em 2em;
+}
+.sammys {
+  margin: 0;
+  padding: 0;
+}
+.sammys li {
+  display: block;
+  text-align: center;
+  padding: 40px 60px;
+}
+.sammys li img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+@media screen and (min-width: 500px) {
+  #content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: auto;
+  }
+  .sammys {
+    width: 950%;
+  }
+  .sammys li {
+    padding: 0;
+    float: left;
+    width: 5.26316%;
+  }
+  .sammys li img {
+    max-width: 60%;
+    margin-top: 20%;
+  }
+}
+@media screen and (min-width: 720px) {
+  .sammys li img {
+    max-width: 50%;
+  }
+}
