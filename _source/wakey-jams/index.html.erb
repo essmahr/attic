@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <title>Wakeyjams</title>
+    <meta content="Wakey Jams" property="og:title"/>
+    <meta content="<%= image_path('wakeyjams/wkyjms-fb.png') %>" property="og:image"/>
+    <meta content="Cataloguing whatever song happens to be in my head when I wake up each morning." name="description" property="og:description"/>
+    <meta content="Scott Mahr" name="author"/>
+    <%= partial 'shared/favicon' %>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://fonts.googleapis.com/css?family=Chivo" rel="stylesheet" type="text/css"></link>
+    <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/5.0.0/sanitize.min.css" %>
+    <%= stylesheet_link_tag "wakeyjams.css" %>
+  </head>
+  <body>
+    <!--[if lt IE 9]
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+      </p>
+    -->
+    <div id="page">
+      <header>
+        <a class="back" href="/projects">&larr; back to smahr.net</a>
+        <h1>Wakey Jams</h1>
+      </header>
+      <main id="content">
+        <% data.wakeyjams.reverse.each_slice(20).with_index do |chunk, index| %>
+          <div class="vid-chunk <% if index > 0 %>chunk-hidden<% end %>">
+            <% chunk.each do |d| %>
+              <div class="vid-item">
+                <h4 class="date">
+                  <%= parse_date(d.date) %>
+                </h4>
+                <strong class="title">
+                  <%= d.song %>
+                </strong>
+                <span class="by">
+                  <%= d.prep || 'by' %>
+                </span>
+                <strong class="artist">
+                  <%= d.artist %>
+                </strong>
+                <% if d.label %>
+                  <em class="sticker">
+                    <%= d.label.text %>
+                  </em>
+                <% end %>
+                <div class="iframe-wrap">
+                  <% if d.vid %>
+                    <i class="button play"></i>
+                    <div id="<%= d.vid %>"></div>
+                  <% else %>
+                    <div class="absent">Youtube doesn't have the audio :/</div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </main>
+    </div>
+    <%= javascript_include_tag "wakeyjams.bundle" %>
+    <%= partial "shared/analytics" %>
+  </body>
+</html>
